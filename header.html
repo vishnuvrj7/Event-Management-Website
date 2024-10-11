@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Header | Eventify</title>
+  <style>
+    /* Global Styles */
+    .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.logo-nav-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Add this to push the content down by the height of the header */
+body {
+  font-family: Arial, sans-serif;
+  padding-top: 60px; /* adjust the value to match the height of your header */
+}
+    .header-logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #23297F; /* Header text color */
+    }
+    .header-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-nav a {
+      color: #23297F; /* Header text color */
+      text-decoration: none;
+      margin-right: 20px;
+    }
+    .header-nav a:hover {
+      color: #585AB3; /* Hover color */
+    }
+    /* About Us Styles */
+    .about-us {
+      padding: 40px;
+    }
+    .about-us h1 {
+      font-size: 36px;
+      font-weight: bold;
+      color: #23297F; /* Header text color */
+    }
+    .about-us p {
+      font-size: 18px;
+      color: #666666; /* Text color */
+    }
+    .navbar-image1 {
+  height: 3rem;
+  margin-right: 20px;
+}
+
+.navbar-desktop-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.thq-link {
+  margin-right: 20px;
+}
+
+.thq-body-small {
+  font-size: 16px;
+  color: #23297F;
+}
+
+.thq-link a {
+  text-decoration: none;
+  color: #23297F;
+}
+
+.thq-link a:hover {
+  color: #585AB3;
+}
+.bold-link {
+  font-weight: bold;
+}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <img
+      alt="Event Management Company"
+      src="./img/logo.png"
+      class="navbar-image1"
+    />
+    <div data-thq="thq-navbar-nav" class="navbar-desktop-menu">
+      <nav class="navbar-links">
+        <nav class="navbar-links">
+            <span class="thq-link thq-body-small bold-link">
+              <a href="index.html"><span>Home</span></a>
+            </span>
+            <span class="thq-link thq-body-small bold-link">
+              <a href="about.php"><span>About Us</span></a>
+            </span>
+            <span class="thq-link thq-body-small bold-link">
+              <a href="events.php"><span>Events</span></a>
+            </span>
+            <span class="thq-link thq-body-small bold-link">
+              <a href="contact.php"><span>Contact</span></a>
+            </span>
+            
+          </nav>
+    </div>
+  </header>
+
+</body>
+</html>
