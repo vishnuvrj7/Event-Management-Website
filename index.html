@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Eventify</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background-color: var(--dl-color-theme-neutral-light);
+
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+    <style>
+      @keyframes fade-in-left {
+        0% {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./index.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <header class="navbar-container">
+          <header data-thq="thq-navbar" class="navbar-navbar-interactive">
+            <img
+              alt="Event Management Company"
+              src="./img/logo.png"
+              class="navbar-image1"
+            />
+            <div data-thq="thq-navbar-nav" class="navbar-desktop-menu">
+              <nav class="navbar-links">
+                <span class="thq-link thq-body-small"><span>Home</span></span>
+                <span class="thq-link thq-body-small">
+                  <a href="about.php"><span>About Us</span></a>
+                </span>
+                <span class="thq-link thq-body-small"><a href="events.php"><span>Events</span></span></a>
+                <span class="thq-link thq-body-small">
+                <a href="contact.php"><span>Contact</span></a>
+                </span>
+               
+              </nav>
+              
+            </div>
+            <div data-thq="thq-burger-menu" class="navbar-burger-menu">
+              <svg viewBox="0 0 1024 1024" class="navbar-icon">
+                <path
+                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                ></path>
+              </svg>
+            </div>
+            <div data-thq="thq-mobile-menu" class="navbar-mobile-menu">
+              <div class="navbar-nav">
+                <div class="navbar-top">
+                  <img
+                    alt="Event Management Company"
+                    src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/fac575ac-7a41-484f-b7ac-875042de11f8?org_if_sml=1&amp;force_format=original"
+                    class="navbar-logo"
+                  />
+                  <div data-thq="thq-close-menu" class="navbar-close-menu">
+                    <svg viewBox="0 0 1024 1024" class="navbar-icon2">
+                      <path
+                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+               
+              </div>
+              
+            </div>
+          </header>
+        </header>
+        <div class="hero-header78">
+          <div class="hero-column thq-section-padding thq-section-max-width">
+            <div class="hero-content">
+              <section id="index">
+              <h1 class="hero-text thq-heading-1">
+                <span>Welcome to Eventify</span>
+              </h1>
+            </section>
+              <p class="hero-text1 thq-body-large">
+                <span>
+                  Your one-stop solution for all your event management needs. We
+                  bring your vision to life!
+                </span>
+              </p>
+            </div>
+            
+          </div>
+          <div class="hero-content1">
+            <div
+              class="hero-row-container thq-animated-group-container-horizontal thq-mask-image-horizontal"
+            >
+              <div class="thq-animated-group-horizontal">
+                <img
+                  alt="Eventify Logo"
+                  src="./img/img3.jpg"
+                  class="hero-placeholder-image thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Event Planning Image"
+                  src="./img/img4.jpg"
+                  class="hero-placeholder-image01 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Happy Participants Image"
+                  src="./img/img5.jpg"
+                  class="hero-placeholder-image02 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img6.jpg"
+                  class="hero-placeholder-image03 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img7.jpg"
+                  class="hero-placeholder-image04 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img8.jpg"
+                  class="hero-placeholder-image05 thq-img-scale thq-img-ratio-1-1"
+                />
+              </div>
+              <div class="thq-animated-group-horizontal">
+                <img
+                  alt="Eventify Logo"
+                  src="./img/img9.jpg"
+                  class="hero-placeholder-image06 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Event Planning Image"
+                  src="./img/img10.jpg"
+                  class="hero-placeholder-image07 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Happy Participants Image"
+                  src="./img/img11.jpg"
+                  class="hero-placeholder-image08 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img12.jpg"
+                  class="hero-placeholder-image09 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img13.jpg"
+                  class="hero-placeholder-image10 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img14.jpg"
+                  class="hero-placeholder-image11 thq-img-scale thq-img-ratio-1-1"
+                />
+              </div>
+            </div>
+            <div
+              class="hero-row-container1 thq-animated-group-container-horizontal thq-mask-image-horizontal"
+            >
+              <div class="thq-animated-group-horizontal-reverse">
+                <img
+                  alt="Hero Image"
+                  src="./img/img15.jpg"
+                  class="hero-placeholder-image12 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img16.jpg"
+                  class="hero-placeholder-image13 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img17.jpg"
+                  class="hero-placeholder-image14 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img18.jpg"
+                  class="hero-placeholder-image15 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img19.jpg"
+                  class="hero-placeholder-image16 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img2.jpg"
+                  class="hero-placeholder-image17 thq-img-scale thq-img-ratio-1-1"
+                />
+              </div>
+              <div class="thq-animated-group-horizontal-reverse">
+                <img
+                  alt="Hero Image"
+                  src="./img/img1.jpg"
+                  class="hero-placeholder-image18 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img20.jpg"
+                  class="hero-placeholder-image19 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img21.jpg"
+                  class="hero-placeholder-image20 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img22.jpg"
+                  class="hero-placeholder-image21 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img23.jpg"
+                  class="hero-placeholder-image22 thq-img-scale thq-img-ratio-1-1"
+                />
+                <img
+                  alt="Hero Image"
+                  src="./img/img24.jpg"
+                  class="hero-placeholder-image23 thq-img-scale thq-img-ratio-1-1"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="hero-container1">
+              <style>
+                @keyframes scroll-x {
+                  from {
+                    transform: translateX(0);
+                  }
+                  to {
+                    transform: translateX(calc(-100% - 16px));
+                  }
+                }
+
+                @keyframes scroll-y {
+                  from {
+                    transform: translateY(0);
+                  }
+                  to {
+                    transform: translateY(calc(-100% - 16px));
+                  }
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+        
+
+
+        <div class="thq-section-padding">
+          <div class="thq-section-max-width">
+            <div class="cta-accent2-bg">
+              <div class="cta-accent1-bg">
+                <div class="cta-container1">
+                  <div class="cta-content">
+                    <span class="thq-heading-2">
+                      <span>Plan Your Next Event with Us</span>
+                    </span>
+                    <p class="thq-body-large">
+                      <span>
+                        We are here to make your event a success. Contact us
+                        today!
+                      </span>
+                    </p>
+                  </div>
+                  <div class="cta-actions">
+                    <button type="button" class="thq-button-filled cta-button">
+                      <a href=contact.php><span>Get in Touch</span></a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+        
+        <div class="steps-container thq-section-padding">
+          <div class="steps-max-width thq-section-max-width">
+            <div class="steps-container1 thq-grid-2">
+              <div class="steps-section-header">
+                <h2 class="thq-heading-2">
+                  Why Us?
+                </h2>
+                <p class="thq-body-large">
+                  <b>Personalized Service:</b>We take the time to understand your vision and tailor every detail to reflect your unique style.<br>
+                  <b>Experienced Team:</b> Our seasoned professionals bring expertise, creativity, and a touch of magic to every event.<br>
+                  <b>Stress-Free Planning:</b> Sit back and enjoy your special day while we handle all the logistics and details.
+                </p>
+                
+              </div>
+              <div class="steps-container2">
+                <div class="steps-container3 thq-card">
+                  <h2 class="thq-heading-2"><span>Discover Events</span></h2>
+                  <span class="steps-text04 thq-body-small">
+                    <span>
+                      Explore a wide range of upcoming events in various
+                      categories.
+                    </span>
+                  </span>
+                  
+                </div>
+                <div class="steps-container4 thq-card">
+                  <h2 class="thq-heading-2">
+                    <span>Register for Events</span>
+                  </h2>
+                  <span class="steps-text07 thq-body-small">
+                    <span>
+                      Secure your spot by registering for the events that
+                      interest you.
+                    </span>
+                  </span>
+                  
+                </div>
+                <div class="steps-container5 thq-card">
+                  <h2 class="thq-heading-2"><span>Attend with Ease</span></h2>
+                  <span class="steps-text10 thq-body-small">
+                    <span>
+                      Enjoy a seamless event experience with our efficient
+                      management services.
+                    </span>
+                  </span>
+                 
+                </div>
+                <div class="steps-container6 thq-card">
+                  <h2 class="thq-heading-2">
+                    <span>Contact Us for Inquiries</span>
+                  </h2>
+                  <span class="steps-text13 thq-body-small">
+                    <span>
+                      Reach out to us for any questions or assistance regarding
+                      our events.
+                    </span>
+                  </span>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="thq-section-padding">
+          <div class="testimonial-max-width thq-section-max-width">
+            <div class="testimonial-container">
+              <h2 class="thq-heading-2"><span>Testimonials</span></h2>
+              <span class="testimonial-text01 thq-body-small">
+                <span>Read what our clients have to say about us.</span>
+              </span>
+            </div>
+            <div class="thq-grid-2">
+              <div class="thq-animated-card-bg-2">
+                <div class="thq-animated-card-bg-1">
+                  <div data-animated="true" class="thq-card testimonial-card">
+                    <div class="testimonial-container02">
+                      <img
+                        alt="Image of monica"
+                        src="./img/monica.jpg"
+                        class="testimonial-image"
+                      />
+                      <div class="testimonial-container03">
+                        <strong class="thq-body-large">
+                          <span>Monica Geller Bing</span>
+                        </strong>
+                        <span class="thq-body-small">
+                          <span>CEO, Central Perk</span>
+                        </span>
+                      </div>
+                    </div>
+                    <span class="testimonial-text04 thq-body-small">
+                      <span>
+                        Eventify transformed our wedding into a dream come true. Their team was organized, attentive, and incredibly creative. From planning to execution, everything was flawless exaclty in Monica wayyyy. We couldn’t be happier with their service!
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="thq-animated-card-bg-2">
+                <div class="thq-animated-card-bg-1">
+                  <div data-animated="true" class="thq-card testimonial-card1">
+                    <div class="testimonial-container04">
+                      <img
+                        alt="Image of Chandler"
+                        src="./img/chandler.jpg"
+                        class="testimonial-image1"
+                      />
+                      <div class="testimonial-container05">
+                        <strong class="thq-body-large">
+                          <span>Chandler Bing</span>
+                        </strong>
+                        <span class="thq-body-small">
+                          <span>Advertising Manager, Transponster</span>
+                        </span>
+                      </div>
+                    </div>
+                    <span class="testimonial-text07 thq-body-small">
+                      <span>
+                        Could I be anymore happier!!!We hired Eventify for our product launch, and they exceeded all expectations. Their attention to detail and professionalism ensured a smooth and successful event. They truly made the process stress-free and enjoyable!
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="thq-animated-card-bg-2">
+                <div class="thq-animated-card-bg-1">
+                  <div data-animated="true" class="thq-card testimonial-card2">
+                    <div class="testimonial-container06">
+                      <img
+                        alt="Image of Joey"
+                        src="./img/joey.jpg"
+                        class="testimonial-image2"
+                      />
+                      <div class="testimonial-container07">
+                        <strong class="thq-body-large">
+                          <span>Joey Tribbiani</span>
+                        </strong>
+                        <span class="thq-body-small">
+                          <span>Actor, Soap Opera</span>
+                        </span>
+                      </div>
+                    </div>
+                    <span class="testimonial-text10 thq-body-small">
+                      <span>
+                        Eventify handled our conference with exceptional skill and precision that they give and have is shared and receive and through this having and giving and sharing and receiving we too can share and love and receive.!
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="thq-animated-card-bg-2">
+                <div class="thq-animated-card-bg-1">
+                  <div data-animated="true" class="thq-card testimonial-card3">
+                    <div class="testimonial-container08">
+                      <img
+                        alt="Image of Rachel"
+                        src="./img/rachel.jpg"
+                        class="testimonial-image3"
+                      />
+                      <div class="testimonial-container09">
+                        <strong class="thq-body-large">
+                          <span>Rachel Green</span>
+                        </strong>
+                        <span class="thq-body-small">
+                          <span>Chief Executive, Ralph Lauren</span>
+                        </span>
+                      </div>
+                    </div>
+                    <span class="testimonial-text13 thq-body-small">
+                      <span>
+                        Thank you for making Emma’s birthday unforgettable. Your hard work and dedication really showed, and I couldn’t be happier with how everything turned out. I would definitely recommend your services to anyone looking for a top-notch event planning experience.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-contact20 thq-section-padding">
+          <div class="contact-max-width thq-section-max-width">
+            <div class="contact-section-title">
+              <span class="thq-body-small">
+                <span>
+                  We are here to assist you with all your event management
+                  needs.
+                </span>
+              </span>
+              <div class="contact-content">
+                <h2 class="thq-heading-2"><span>Contact Us</span></h2>
+                <p class="contact-text2 thq-body-large">
+                  <span>
+                    Feel free to reach out to us for any inquiries or questions.
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-content1">
+                <svg viewBox="0 0 1024 1024" class="thq-icon-medium">
+                  <path
+                    d="M854 342v-86l-342 214-342-214v86l342 212zM854 170q34 0 59 26t25 60v512q0 34-25 60t-59 26h-684q-34 0-59-26t-25-60v-512q0-34 25-60t59-26h684z"
+                  ></path>
+                </svg>
+                <div class="contact-contact-info">
+                  <div class="contact-content2">
+                    <h3 class="contact-text3 thq-heading-3">Email</h3>
+                    <p class="contact-text4 thq-body-large">
+                      <span>
+                        <a href="contact.php">Contact Us</a> now and we will get back to you as
+                        soon as possible.
+                      </span>
+                    </p>
+                  </div>
+                  <span class="contact-email thq-body-small">
+                    <span>info@eventify.com</span>
+                  </span>
+                </div>
+              </div>
+              <div class="contact-content3">
+                <svg viewBox="0 0 1024 1024" class="thq-icon-medium">
+                  <path
+                    d="M282 460q96 186 282 282l94-94q20-20 44-10 72 24 152 24 18 0 30 12t12 30v150q0 18-12 30t-30 12q-300 0-513-213t-213-513q0-18 12-30t30-12h150q18 0 30 12t12 30q0 80 24 152 8 26-10 44z"
+                  ></path>
+                </svg>
+                <div class="contact-contact-info1">
+                  <div class="contact-content4">
+                    <h3 class="contact-text5 thq-heading-3">Phone</h3>
+                    <p class="contact-text6 thq-body-large">
+                      <span>
+                        Thank you for considering us for your event planning!
+                      </span>
+                    </p>
+                  </div>
+                  <span class="contact-phone thq-body-small">
+                    <span>+91 8074468224</span>
+                  </span>
+                </div>
+              </div>
+              <div class="contact-content5">
+                <svg viewBox="0 0 1024 1024" class="thq-icon-medium">
+                  <path
+                    d="M512 0c-176.732 0-320 143.268-320 320 0 320 320 704 320 704s320-384 320-704c0-176.732-143.27-320-320-320zM512 512c-106.040 0-192-85.96-192-192s85.96-192 192-192 192 85.96 192 192-85.96 192-192 192z"
+                  ></path>
+                </svg>
+                <div class="contact-contact-info2">
+                  <div class="contact-content6">
+                    <h3 class="contact-text7 thq-heading-3">Office</h3>
+                    <p class="contact-text8 thq-body-large">
+                      <span>
+                        Follow us on social media for more updates and event
+                        news.
+                      </span>
+                    </p>
+                  </div>
+                  <span class="contact-address thq-body-small">
+                    <span>Eventify Tower,
+                      Sector 62, Noida
+                      UP, India
+                      PIN: 201301</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer-footer1 thq-section-padding">
+          <div class="footer-max-width thq-section-max-width">
+            <div class="footer-content">
+              <div class="footer-newsletter">
+                <img
+                  alt="Event Management Company Logo"
+                  src="./img/logo.png"
+                  class="footer-image1"
+                />
+               
+                  </span>
+                </div>
+              </div>
+              <div class="footer-links">
+                <div class="footer-column1">
+                  <strong class="thq-body-large footer-column1-title">
+                    <span>Company</span>
+                  </strong>
+                  <div class="footer-footer-links">
+                    <span class="thq-body-small"><a href="#index"><span>Home</span></span></a>
+                    <span class="thq-body-small"><a href="about.php"><span>About Us</span></span></a>
+                    <span class="thq-body-small"><a href="events.php"><span>Events</span></span></a>
+                    <span class="thq-body-small"><a href="contact.php"><span>Contact</span></span></a>
+                    <span class="thq-body-small">
+                      
+                    </span>
+                  </div>
+                </div>
+                <div class="footer-column2">
+                  <strong class="thq-body-large footer-column2-title">
+                    <span>Quick Links</span>
+                  </strong>
+                  <div class="footer-footer-links1">
+                    <span class="thq-body-small">
+                      <a href="404.html"><span>Terms of Use</span></a>
+                    </span>
+                    <span class="thq-body-small">
+                      <a href="404.html"><span>Cookies Policy</span></a>
+                    </span>
+                    <span class="thq-body-small"><a href="about.php#team"><span>Team</span></span></a>
+                    <span class="thq-body-small"><a href="404.html"><span>FAQs</span></span></a>
+                    <span class="thq-body-small"><a href="https://freelearniverse.wordpress.com/"><span>Blog</span></span></a>
+                  </div>
+                </div>
+                <div class="footer-column3">
+                  <strong class="thq-body-large footer-social-link1-title">
+                    <span>Follow Us</span>
+                  </strong>
+                  <div class="footer-social-links">
+                    <div class="footer-link">
+                      <svg
+                        viewBox="0 0 877.7142857142857 1024"
+                        class="thq-icon-small"
+                      >
+                        <path
+                          d="M713.143 73.143c90.857 0 164.571 73.714 164.571 164.571v548.571c0 90.857-73.714 164.571-164.571 164.571h-107.429v-340h113.714l17.143-132.571h-130.857v-84.571c0-38.286 10.286-64 65.714-64l69.714-0.571v-118.286c-12-1.714-53.714-5.143-101.714-5.143-101.143 0-170.857 61.714-170.857 174.857v97.714h-114.286v132.571h114.286v340h-304c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571z"
+                        ></path>
+                      </svg>
+                      <a href="not-found.html"><span class="thq-body-small">Facebook</span></a>
+                    </div>
+                    <div class="footer-link1">
+                      <svg
+                        viewBox="0 0 877.7142857142857 1024"
+                        class="thq-icon-small"
+                      >
+                        <path
+                          d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                        ></path>
+                      </svg>
+                      <a href="404.html"><span class="thq-body-small">Instagram</span></a>
+                    </div>
+                    <div class="footer-link2">
+                      <svg
+                        viewBox="0 0 950.8571428571428 1024"
+                        class="thq-icon-small"
+                      >
+                        <path
+                          d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                        ></path>
+                      </svg>
+                      <a href="404.html"><span class="thq-body-small">X</span></a>
+                    </div>
+                    <div class="footer-link3">
+                      <svg
+                        viewBox="0 0 877.7142857142857 1024"
+                        class="thq-icon-small"
+                      >
+                        <path
+                          d="M135.429 808h132v-396.571h-132v396.571zM276 289.143c-0.571-38.857-28.571-68.571-73.714-68.571s-74.857 29.714-74.857 68.571c0 37.714 28.571 68.571 73.143 68.571h0.571c46.286 0 74.857-30.857 74.857-68.571zM610.286 808h132v-227.429c0-121.714-65.143-178.286-152-178.286-70.857 0-102.286 39.429-119.429 66.857h1.143v-57.714h-132s1.714 37.143 0 396.571v0h132v-221.714c0-11.429 0.571-23.429 4-32 9.714-23.429 31.429-48 68-48 47.429 0 66.286 36 66.286 89.714v212zM877.714 237.714v548.571c0 90.857-73.714 164.571-164.571 164.571h-548.571c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571c90.857 0 164.571 73.714 164.571 164.571z"
+                        ></path>
+                      </svg>
+                      <a href="404.html"><span class="thq-body-small">LinkedIn</span></a>
+                    </div>
+                    <div class="footer-link4">
+                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
+                        <path
+                          d="M406.286 644.571l276.571-142.857-276.571-144.571v287.429zM512 152c215.429 0 358.286 10.286 358.286 10.286 20 2.286 64 2.286 102.857 43.429 0 0 31.429 30.857 40.571 101.714 10.857 82.857 10.286 165.714 10.286 165.714v77.714s0.571 82.857-10.286 165.714c-9.143 70.286-40.571 101.714-40.571 101.714-38.857 40.571-82.857 40.571-102.857 42.857 0 0-142.857 10.857-358.286 10.857v0c-266.286-2.286-348-10.286-348-10.286-22.857-4-74.286-2.857-113.143-43.429 0 0-31.429-31.429-40.571-101.714-10.857-82.857-10.286-165.714-10.286-165.714v-77.714s-0.571-82.857 10.286-165.714c9.143-70.857 40.571-101.714 40.571-101.714 38.857-41.143 82.857-41.143 102.857-43.429 0 0 142.857-10.286 358.286-10.286v0z"
+                        ></path>
+                      </svg>
+                      <a href="https://youtu.be/xvFZjo5PgG0?si=mGiHlm11vLJH1JSy"><span class="thq-body-small">Youtube</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-credits">
+              <div class="thq-divider-horizontal"></div>
+              <div class="footer-row">
+                
+                  <span>© 2024 VrJHQ</span>
+                
+                
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script
+      data-section-id="navbar"
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>
+</html>
