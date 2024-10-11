@@ -1,0 +1,51 @@
+.about-us {
+    background-color: #FBF1EB; /* Light beige secondary color */
+    padding: 50px 0;
+  }
+  
+  .about-us-content {
+    padding: 20px;
+    background-color: #FFFFFF; /* White secondary color */
+    border: 1px solid #585AB3; /* Lighter blue primary color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #23297F; /* Dark blue primary color */
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 16px;
+    color: #080A45; /* Dark grey neutral color */
+    margin-bottom: 20px;
+  }
+  
+  .btn-primary {
+    background-color: #C5B6E0; /* Light purple accent color */
+    color: #FFFFFF; /* White neutral color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #8F84D2; /* Darker purple accent color */
+  }
+  
+  .about-us-image {
+    padding: 20px;
+    background-color: #FFFFFF; /* White secondary color */
+    border: 1px solid #585AB3; /* Lighter blue primary color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-us-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
